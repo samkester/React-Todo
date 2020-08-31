@@ -1,5 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
+import StyledList from "./styled/StyledList";
 
 //   TodoList [props: list of todo items; removeItem]
 //     Todo [props: specific todo item; removeItem]
@@ -7,7 +8,7 @@ import Todo from "./Todo";
 class TodoList extends React.Component {
     render () {
         return (
-            <div>
+            <StyledList>
                 {
                     this.props.listItems ?
                     this.props.listItems.map (item =>
@@ -20,7 +21,7 @@ class TodoList extends React.Component {
                     )
                     : "Loading, please wait."
                 }
-            </div>
+            </StyledList>
         )
     }
 }
