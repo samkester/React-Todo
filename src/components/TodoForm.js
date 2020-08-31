@@ -16,7 +16,7 @@ class TodoForm extends React.Component {
         const name = event.target.name;
         const value = event.target.value;
 
-        console.log(value);
+        //console.log(value);
 
         this.setState({
             fields: {
@@ -48,12 +48,15 @@ class TodoForm extends React.Component {
 
     updateButtonState = () => {
         this.setState({
-            enabled: this.state.name && this.state.name !== "",
+            enabled: this.state.fields.text.trim() !== "",
         });
     }
 
     createNewTodo = event => {
         event.preventDefault();
+        console.log(`Create ${this.state.fields.text}`)
+        this.props.addItem(this.state.fields.text);
+        this.setState({fields: {text: ""}, enabled: false});
     };
 
     render () {
@@ -61,7 +64,7 @@ class TodoForm extends React.Component {
             <div>
                 <form onSubmit={this.createNewTodo}>
                     <input type="text" name="text" value={this.state.fields.text} onChange={this.updateField} />
-                    <button onClick={this.createNewTodo}>Push Me</button>
+                    <button onClick={this.createNewTodo} disabled={!this.state.enabled}>Push Me</button>
                 </form>
                 <div className="errors">
                     {this.state.errors &&

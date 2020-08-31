@@ -21,7 +21,16 @@ class App extends React.Component {
 
   setSearchTerm = () => {};
 
-  addItem = () => {};
+  addItem = text => {
+    this.setState({
+      todoItems: this.state.todoItems.concat({
+        text,
+        id: Date.now(),
+        complete: false,
+      })
+    });
+  };
+
   toggleItem = () => {};
   removeItem = () => {};
   removeAllDisabledItems = () => {};
