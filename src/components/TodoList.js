@@ -11,7 +11,12 @@ class TodoList extends React.Component {
                 {
                     this.props.listItems ?
                     this.props.listItems.map (item =>
-                    <Todo key={item.id} item={item} />
+                        {
+                            if(this.props.filter === "" || item.text.includes(this.props.filter)){
+                                return <Todo key={item.id} item={item} />;
+                            }
+                            return "";
+                        }
                     )
                     : "Loading, please wait."
                 }

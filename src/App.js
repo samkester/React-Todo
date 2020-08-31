@@ -19,7 +19,11 @@ class App extends React.Component {
     };
   }
 
-  setSearchTerm = () => {};
+  setSearchTerm = term => {
+    this.setState({
+      searchTerm: term,
+    });
+  };
 
   addItem = text => {
     this.setState({
@@ -40,7 +44,7 @@ class App extends React.Component {
       <div>
         <h2>Welcome to your Todo App!</h2>
         <SearchBar searchTerm={this.state.searchTerm} setSearchTerm={this.setSearchTerm} removeAllCleared={this.removeAllDisabledItems} />
-        <TodoList listItems={this.state.todoItems} removeItem={this.removeItem} toggleItem={this.toggleItem} />
+        <TodoList listItems={this.state.todoItems} removeItem={this.removeItem} toggleItem={this.toggleItem} filter={this.state.searchTerm} />
         <TodoForm addItem={this.addItem} />
       </div>
     );

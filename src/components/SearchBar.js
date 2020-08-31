@@ -3,10 +3,17 @@ import React from "react";
 //   SearchBar [props: set search filter]
 
 class SearchBar extends React.Component {
+    
+    setSearchTerm = (event) => {
+        //console.log(event.target.value);
+        this.props.setSearchTerm(event.target.value);
+    }
+
     render () {
         return (
             <div>
-                I am a search bar.
+                <input type="text" value={this.props.searchTerm} onChange={this.setSearchTerm} />
+                <button onChange={this.props.removeAllCleared}>Clear</button>
             </div>
         )
     }
