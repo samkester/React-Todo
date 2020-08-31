@@ -3,6 +3,7 @@ import SearchBar from "./components/SearchBar";
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
 import data from "./data/data";
+import StyledApp from "./components/styled/StyledApp";
 
 // App [state: list of todo items; search filter]
 //   SearchBar [props: search filter, set search filter, remove cleared items]
@@ -64,12 +65,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <StyledApp>
         <h2>Welcome to your Todo App!</h2>
         <SearchBar searchTerm={this.state.searchTerm} setSearchTerm={this.setSearchTerm} removeAllCleared={this.removeAllDisabledItems} />
         <TodoList listItems={this.state.todoItems} removeItem={this.removeItem} toggleItem={this.toggleItem} filter={this.state.searchTerm} />
         <TodoForm addItem={this.addItem} />
-      </div>
+      </StyledApp>
     );
   }
 }
