@@ -18,6 +18,10 @@ const StyledTodo = styled.div`
     &.complete{
         color: ${props => props.theme.color.completed};
         background: ${props => props.theme.background.completed};
+    
+        p{
+            text-decoration: line-through;
+        }
 
         button:hover{
             color: ${props => props.theme.color.post};

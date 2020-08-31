@@ -1,4 +1,5 @@
 import React from "react";
+import StyledForm from "./styled/StyledForm";
 
 //   TodoForm [state: form fields, errors, and button enabling / props: addItem ]
 
@@ -61,17 +62,17 @@ class TodoForm extends React.Component {
 
     render () {
         return (
-            <div>
+            <StyledForm>
                 <form onSubmit={this.createNewTodo}>
                     <input type="text" name="text" value={this.state.fields.text} onChange={this.updateField} />
-                    <button onClick={this.createNewTodo} disabled={!this.state.enabled}>Push Me</button>
+                    <button onClick={this.createNewTodo} disabled={!this.state.enabled}>Add</button>
                 </form>
                 <div className="errors">
                     {this.state.errors &&
                     Object.values(this.state.errors).map((error, index) => <p key={index}>{error}</p>) /* for each field in "errors", create a <p> with that field's value */
                     }
                 </div>
-            </div>
+            </StyledForm>
         )
     }
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import StyledSearch from "./styled/StyledSearch";
 
 //   SearchBar [props: set search filter]
 
@@ -11,10 +12,10 @@ class SearchBar extends React.Component {
 
     render () {
         return (
-            <div>
-                <input type="text" value={this.props.searchTerm} onChange={this.setSearchTerm} />
-                <button onClick={this.props.removeAllCleared}>Clear</button>
-            </div>
+            <StyledSearch>
+                <input type="text" value={this.props.searchTerm} onChange={this.setSearchTerm} placeholder="Filter" />
+                <button onClick={this.props.removeAllCleared}>Remove Completed Items</button>
+            </StyledSearch>
         )
     }
 }
