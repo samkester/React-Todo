@@ -1,4 +1,5 @@
 import React from "react";
+import StyledTodo from "./styled/StyledTodo";
 
 //     Todo [props: specific todo item; removeItem]
 
@@ -14,14 +15,14 @@ class Todo extends React.Component {
 
     render () {
         return (
-            <div className={this.props.item.complete ? "complete" : ""} onClick={this.toggleMe}>
-                {
+            <StyledTodo className={this.props.item.complete ? "complete" : ""} onClick={this.toggleMe}>
+                <p>{
                     this.props.item ?
-                    <p>{this.props.item.text}</p>
-                    : "Loading, please wait."
-                }
+                    this.props.item.text :
+                    "Loading, please wait."
+                }</p>
                 <button onClick={this.removeMe}>Remove</button>
-            </div>
+            </StyledTodo>
         )
     }
 }
