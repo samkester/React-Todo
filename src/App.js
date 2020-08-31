@@ -35,9 +35,32 @@ class App extends React.Component {
     });
   };
 
-  toggleItem = () => {};
-  removeItem = () => {};
-  removeAllDisabledItems = () => {};
+  toggleItem = id => {
+    //console.log(`Toggle ${id}`);
+    this.setState({
+      todoItems: this.state.todoItems.map(item => {
+        if(item.id === id){
+          return {...item, complete: !item.complete}
+        }else{
+          return item;
+        }
+      })
+    });
+  };
+
+  removeItem = id => {
+    //console.log(`Remove ${id}`);
+    this.setState({
+      todoItems: this.state.todoItems.filter(item => item.id !== id) // filter will keep things that return true, so in this case, everything BUT that id
+    });
+  };
+
+  removeAllDisabledItems = () => {
+    console.log("remove all completed items");
+    this.setState({
+      todoItems: this.state.todoItems.filter(item => !item.complete) // and in this case, everything BUT the complete items
+    });
+  };
 
   render() {
     return (

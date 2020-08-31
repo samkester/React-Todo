@@ -13,7 +13,7 @@ class TodoList extends React.Component {
                     this.props.listItems.map (item =>
                         {
                             if(this.props.filter === "" || item.text.includes(this.props.filter)){
-                                return <Todo key={item.id} item={item} />;
+                                return <Todo key={item.id} item={item} removeItem={this.props.removeItem} toggleItem={this.props.toggleItem} />;
                             }
                             return "";
                         }

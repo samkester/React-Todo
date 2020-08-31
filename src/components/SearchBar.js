@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
         return (
             <div>
                 <input type="text" value={this.props.searchTerm} onChange={this.setSearchTerm} />
-                <button onChange={this.props.removeAllCleared}>Clear</button>
+                <button onClick={this.props.removeAllCleared}>Clear</button>
             </div>
         )
     }
