@@ -54,7 +54,7 @@ class TodoForm extends React.Component {
 
     createNewTodo = event => {
         event.preventDefault();
-        console.log(`Create ${this.state.fields.text}`)
+        //console.log(`Create ${this.state.fields.text}`)
         this.props.addItem(this.state.fields.text);
         this.setState({fields: {text: ""}, enabled: false});
     };

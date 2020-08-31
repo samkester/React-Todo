@@ -56,7 +56,7 @@ class App extends React.Component {
   };
 
   removeAllDisabledItems = () => {
-    console.log("remove all completed items");
+    //console.log("remove all completed items");
     this.setState({
       todoItems: this.state.todoItems.filter(item => !item.complete) // and in this case, everything BUT the complete items
     });
