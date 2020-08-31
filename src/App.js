@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from "./components/SearchBar";
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
+import data from "./data/data";
 
 // App [state: list of todo items; search filter]
 //   SearchBar [props: search filter, set search filter, remove cleared items]
@@ -13,7 +14,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      todoItems: [],
+      todoItems: data.initialItems,
       searchTerm: "",
     };
   }

@@ -8,9 +8,13 @@ class TodoList extends React.Component {
     render () {
         return (
             <div>
-                I am a todo list.
-                <Todo />
-                <Todo />
+                {
+                    this.props.listItems ?
+                    this.props.listItems.map (item =>
+                    <Todo key={item.id} item={item} />
+                    )
+                    : "Loading, please wait."
+                }
             </div>
         )
     }

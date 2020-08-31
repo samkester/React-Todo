@@ -6,7 +6,11 @@ class Todo extends React.Component {
     render () {
         return (
             <div>
-                I am a todo list item.
+                {
+                    this.props.item ?
+                    <p>{this.props.item.text}</p>
+                    : "Loading, please wait."
+                }
             </div>
         )
     }
