@@ -7,12 +7,11 @@ const StyledList = styled.div`
     border: 2px solid currentColor;
     border-radius: 2rem;
 
-    margin: 2.5%;
-    padding: 1%;
+    padding: 2%;
+    width: 95%;
 
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
 `;
 
 export default StyledList;

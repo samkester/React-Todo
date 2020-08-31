@@ -12,6 +12,12 @@ const StyledApp = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    h2{
+        margin: 2%;
+        font-weight: normal;
+        font-size: 3.6rem;
+    }
 `;
 
 export default StyledApp;

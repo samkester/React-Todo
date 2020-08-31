@@ -1,6 +1,6 @@
 const theme = {
     color: {
-        page: "lightslategray",
+        page: "lightsteelblue",
         UI: "slategray",
         post: "skyblue",
         completed: "silver",

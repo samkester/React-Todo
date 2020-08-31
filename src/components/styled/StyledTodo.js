@@ -7,7 +7,7 @@ const StyledTodo = styled.div`
     border: 2px solid currentColor;
     border-radius: 2rem;
 
-    margin: 1%;
+    margin: 1% 0%;
 
     width: 100%;
 
@@ -18,11 +18,15 @@ const StyledTodo = styled.div`
     &.complete{
         color: ${props => props.theme.color.completed};
         background: ${props => props.theme.background.completed};
+
+        button:hover{
+            color: ${props => props.theme.color.post};
+        }
     }
 
     p{
         margin: 1em;
-        flex-shrink: 1;
+        max-width: 80%;
     }
 
     button{
@@ -32,6 +36,12 @@ const StyledTodo = styled.div`
         color: currentColor;
         border-left: 2px solid currentColor;
         background: transparent;
+
+        :hover{
+            font-weight: bold;
+            border-left-width: 3px;
+            color: ${props => props.theme.color.completed};
+        }
     }
 `;
 
